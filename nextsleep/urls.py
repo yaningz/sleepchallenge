@@ -8,8 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'nextsleep.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', include('sleep.urls')),
+    url(r'^', include('sleep.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/login/',  'mit.scripts_login',  name='login', ),
-    
+    url(r'^accounts/login/', 'mit.scripts_login', name='login', ),
 )
