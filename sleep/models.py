@@ -9,7 +9,7 @@ class UserProfile(models.Model):
   user = models.OneToOneField(User)
 
   wing = models.ForeignKey(Wing)
-  zs = model.TextField() # sleep data
+  zs = models.TextField() # sleep data
 
   def __unicode__(self):
     return self.user.username
