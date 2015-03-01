@@ -10,4 +10,6 @@ urlpatterns = patterns('',
 
     url(r'^$', include('sleep.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/',  'mit.scripts_login',  name='login', ),
+    
 )

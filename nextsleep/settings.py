@@ -50,8 +50,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mit.ScriptsRemoteUserMiddleware',
 #    'django.contrib.admin',
 #    'django.contrib.admindocs',
+)
+
+AUTHENTICAION_BACKENDS = (
+    'mit.ScriptsRemoteUserBackend',
 )
 
 ROOT_URLCONF = 'nextsleep.urls'
