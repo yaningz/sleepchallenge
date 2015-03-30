@@ -51,14 +51,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'mit.ScriptsRemoteUserMiddleware',
+#    'mit.ScriptsRemoteUserMiddleware',
 #    'django.contrib.admin',
 #    'django.contrib.admindocs',
 )
 
-AUTHENTICATION_BACKENDS = (
-    'mit.ScriptsRemoteUserBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+#     'mit.ScriptsRemoteUserBackend',
+# )
 
 ROOT_URLCONF = 'nextsleep.urls'
 
@@ -126,21 +126,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, 'staticfiles'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_DIR, 'staticfiles'),
+# )
 
-# List of finder classes that know how to find static files in
-# various locations.
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+# # List of finder classes that know how to find static files in
+# # various locations.
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+# )
 
 # Static asset configuration
 # import os
