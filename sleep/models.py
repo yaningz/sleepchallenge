@@ -8,7 +8,8 @@ class Wing(models.Model):
 class UserProfile(models.Model):
   user = models.OneToOneField(User)
 
-  wing = models.ForeignKey(Wing)
+  #wing = models.ForeignKey(Wing)
+  wing = models.TextField() # wing name
   zs = models.TextField() # sleep data
 
   def __unicode__(self):
