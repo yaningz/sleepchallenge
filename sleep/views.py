@@ -24,7 +24,7 @@ def get_last_name(name):
 def index(request):
     return render(request, 'sleep/index.html')
 
-# @login_required
+@login_required
 def record(request):
     return render(request, 'sleep/record.html')
 
