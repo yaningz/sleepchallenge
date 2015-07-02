@@ -1,4 +1,6 @@
+import requests
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,20 +14,26 @@ def record(request):
 def stats(request):
     return render(request, 'sleep/stats.html')
 
+def parse(string):
+	string = string.encode('utf8')
+	parts = string.split(':')
+	if len(parts) == 2:
+		return parts
+
 def login(request):
-	print 'got a request to login'
-	# A boolean value for telling the template whether the registration was successful.
-    # Set to False initially. Code changes value to True when registration succeeds.
-	registered = False
-
-	# If it's a HTTP POST, we're interested in processing a user registration.
-	if request.method == 'POST':
-		# print stuff to see what we got
-		print request.POST
-		for x in request.POST:
-			print 'got a thing:', x
-	else:
-		# not an HTTP POST, just display the page
-		pass
-
+	print 'Got a request to login'
 	return render(request, 'sleep/login.html')
+
+def loginUser(request):
+	# Check for name and email fields in GET
+	# If present, a person is properly logging in. Otherwise, just display a default login page.
+	if len(request.GET) > 0:
+		fields = {}
+		for x in request.GET:
+			(key, value) = parse(x)
+			fields[key] = value
+		print 'Received a login request with email', fields['email'], 'and name', fields['name']
+		# TODO(lahuang4): Register or authenticate user here
+		return HttpResponse(status=200)
+	else:
+		return render(request, 'sleep/login.html')
